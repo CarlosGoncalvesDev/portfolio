@@ -547,3 +547,23 @@ span {
         background-position: right bottom; /* Posicione a imagem no centro inferior */
     }
 }
+
+#developer {
+    font-size: 3.2rem;
+    color: transparent; /* Define a cor do texto como transparente */
+    background-image: linear-gradient(to right, #00abf0, #00abf0); /* Define um fundo gradiente azul */
+    background-size: 0% 100%; /* Define o tamanho inicial do gradiente */
+    background-repeat: no-repeat; /* Evita que o gradiente se repita */
+    -webkit-background-clip: text; /* Define a área do texto onde o fundo será exibido */
+    animation: fillText 3s forwards; /* Define a animação para preencher o texto */
+}
+
+/* Animação para preencher o texto */
+@keyframes fillText {
+    from {
+        background-size: 0% 100%; /* Define o tamanho inicial do gradiente */
+    }
+    to {
+        background-size: 100% 100%; /* Define o tamanho final do gradiente */
+    }
+}
