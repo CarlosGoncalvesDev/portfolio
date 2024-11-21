@@ -1,24 +1,35 @@
-// Seleciona todos os links do menu
-const navLinks = document.querySelectorAll('.navbar a');
+// Script para alternar o menu em dispositivos móveis
+const menuIcon = document.getElementById("menu-icon");
+const navbar = document.querySelector(".navbar");
 
-// Seleciona o logo
-const logo = document.querySelector('.logo');
-
-// Função para remover a classe 'active' de todos os links e adicionar ao alvo
-function setActiveLink(target) {
-  navLinks.forEach(nav => nav.classList.remove('active')); // Remove 'active' de todos
-  target.classList.add('active'); // Adiciona 'active' ao alvo
-}
-
-// Adiciona o evento de clique aos links do menu
-navLinks.forEach(link => {
-  link.addEventListener('click', function () {
-    setActiveLink(this);
-  });
+// Alterna a classe 'active' no menu ao clicar no ícone
+menuIcon.addEventListener("click", () => {
+  navbar.classList.toggle("active");
 });
 
-// Adiciona o evento de clique no logo
-logo.addEventListener('click', () => {
-  const homeLink = document.querySelector('.navbar a[href="#home"]'); // Seleciona o link 'Home'
-  setActiveLink(homeLink); // Define o 'Home' como ativo
+// Script para marcar o link ativo
+const navLinks = document.querySelectorAll(".navbar a");
+
+// Função para definir o item ativo
+function setActiveLink() {
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+  this.classList.add("active");
+}
+
+// Adiciona evento de clique em cada link do menu
+navLinks.forEach((link) => {
+  link.addEventListener("click", setActiveLink);
+});
+
+// Função para voltar ao estado "Home" ao clicar no logo
+const logo = document.querySelector(".logo");
+
+logo.addEventListener("click", () => {
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+  });
+  const homeLink = document.querySelector('.navbar a[href="#home"]');
+  homeLink.classList.add("active");
 });
