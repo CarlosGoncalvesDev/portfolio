@@ -66,3 +66,26 @@ document.getElementById("prevBtn").addEventListener("click", prevItem);
 
 // Opcional: adicionar rotação automática
 setInterval(nextItem, 5000); // Troca de item a cada 5 segundos
+
+// Obter todas as seções e os links do menu
+const sections = document.querySelectorAll("section");
+const options = {
+  threshold: 0.6, // Percentual da seção visível na tela
+};
+
+// Função para verificar qual seção está visível
+function handleIntersection(entries) {
+  entries.forEach((entry) => {
+    const id = entry.target.getAttribute("id");
+    const link = document.querySelector(`.navbar a[href="#${id}"]`);
+
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      if (link) link.classList.add("active");
+    }
+  });
+}
+
+// Usar IntersectionObserver para observar as seções
+const observer = new IntersectionObserver(handleIntersection, options);
+sections.forEach((section) => observer.observe(section));
