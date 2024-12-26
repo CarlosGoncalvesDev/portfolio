@@ -216,7 +216,7 @@ section {
 }
 
 .text-animation span::before {
-  content: "Scrum Master";
+  content: "DevOps Engineer";
   color: var(--main-color);
   animation: words 20s infinite;
 }
@@ -239,13 +239,15 @@ section {
 }
 
 @keyframes words {
+
   0%,
   20% {
-    content: "Product Manager";
+    content: "Full Stack Developer";
   }
 }
 
 @keyframes typing {
+
   10%,
   15%,
   30%,
@@ -258,6 +260,7 @@ section {
   95% {
     width: 0;
   }
+
   5%,
   20%,
   25%,
@@ -509,6 +512,7 @@ section {
   html {
     font-size: 55%;
   }
+
   .services-container {
     padding-bottom: 7rem;
     grid-template-columns: repeat(2, 1fr);
@@ -520,26 +524,33 @@ section {
   header {
     padding: 2 rem 3%;
   }
+
   section {
     padding: 10rem 3% 2rem;
   }
+
   .timeline-items::before {
     left: 7px;
   }
+
   .timeline-item:nth-child(odd) {
     padding-right: 0;
     text-align: left;
   }
+
   .timeline-item:nth-child(odd),
   .timeline-item:nth-child(even) {
     padding-left: 37px;
   }
+
   .timeline-dot {
     left: 0;
   }
+
   .services {
     padding-bottom: 7rem;
   }
+
   .footer {
     padding: 2rem 3%;
   }
@@ -549,6 +560,7 @@ section {
   #menu-icon {
     display: block;
   }
+
   .navbar {
     position: absolute;
     top: 100%;
@@ -562,37 +574,101 @@ section {
     border-bottom: 2px solid var(--main-color);
     display: none;
   }
+
   .navbar-active {
     display: block;
   }
+
   .navbar a {
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
     color: white;
   }
+
   .home {
     flex-direction: column-reverse;
     margin: 5rem 4rem;
   }
+
   .home-content h3 {
     font-size: 2.6rem;
   }
+
   .home-content h1 {
     font-size: 8rem;
     margin-top: 3rem;
   }
+
   .home-content p {
     max-width: 600px;
     margin: 0 auto;
   }
+
   .home-img img {
     width: 56vw;
   }
+
   .services h2 {
     margin-bottom: 3rem;
   }
+
   .services-container {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.carousel {
+  position: relative;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+  opacity: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: #00b2b2;
 }

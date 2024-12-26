@@ -33,3 +33,36 @@ logo.addEventListener("click", () => {
   const homeLink = document.querySelector('.navbar a[href="#home"]');
   homeLink.classList.add("active");
 });
+
+
+const carouselItems = document.querySelectorAll(".carousel-item");
+let currentIndex = 0;
+
+// Função para mostrar o item atual
+function showCurrentItem() {
+  carouselItems.forEach((item, index) => {
+    item.classList.remove("active");
+    if (index === currentIndex) {
+      item.classList.add("active");
+    }
+  });
+}
+
+// Função para ir para o próximo item
+function nextItem() {
+  currentIndex = (currentIndex + 1) % carouselItems.length;
+  showCurrentItem();
+}
+
+// Função para ir para o item anterior
+function prevItem() {
+  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+  showCurrentItem();
+}
+
+// Adiciona eventos aos botões
+document.getElementById("nextBtn").addEventListener("click", nextItem);
+document.getElementById("prevBtn").addEventListener("click", prevItem);
+
+// Opcional: adicionar rotação automática
+setInterval(nextItem, 5000); // Troca de item a cada 5 segundos
