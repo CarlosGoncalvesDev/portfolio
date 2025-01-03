@@ -633,14 +633,16 @@ section {
 }
 
 .carousel-item {
-  min-width: 100%;
-  transition: transform 0.5s ease;
+  display: none; /* Oculta todos os itens por padrão */
   opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .carousel-item.active {
+  display: block; /* Exibe somente o item ativo */
   opacity: 1;
 }
+
 
 .carousel-item img {
   width: 100%;
