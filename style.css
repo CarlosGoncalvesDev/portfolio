@@ -216,7 +216,7 @@ section {
 }
 
 .text-animation span::before {
-  content: "DevOps Engineer";
+  content: "Project Management";
   color: var(--main-color);
   animation: words 20s infinite;
 }
@@ -242,7 +242,7 @@ section {
 
   0%,
   20% {
-    content: "Full Stack Developer";
+    content: "Scrum Master";
   }
 }
 
